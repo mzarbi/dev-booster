@@ -1,0 +1,123 @@
+{
+	"parentFolder": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\generated",
+	"groupId": "com.nogroup.sample",
+	"artifactId": "project",
+	"pomTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\maven.pom.tpl",
+	"propertiesTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\template.application.properties",
+	"dockerfileTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\template.Dockerfile",
+	"dockerComposeTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\template.docker-compose.yml",
+	"k8DeploymentTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\template.k8-deployment.yaml",
+	"namespaceTemplate": "C:\\Users\\medzi\\eclipse-workspace-27-11-2020\\code-sprint\\src\\main\\resources\\template.namespace.yaml",
+	"data": {
+		"factors": [
+			{
+				"name": "Role",
+				"values": [
+					"Super",
+					"User"
+				]
+			},
+			{
+				"name": "BuildingType",
+				"values": [
+					"MDU",
+					"SDU"
+				]
+			},
+			{
+				"name": "Authorization",
+				"values": [
+					"Edit_Project",
+					"Delete_Project",
+					"Add_Collaborators",
+					"Delete_Collaborators",
+					"Edit_Roles"
+				]
+			},
+			{
+				"name": "ProjectType",
+				"values": [
+					"Collaborative",
+					"Single_User"
+				]
+			},
+			{
+				"name": "ProjectScope",
+				"values": [
+					"Building_Mapping",
+					"FTTH_Planning"
+				]
+			},
+			{
+				"name": "UserType",
+				"values": [
+					"Super",
+					"Normal"
+				]
+			},
+			{
+				"name": "PriorityBinary",
+				"values": [
+					"High",
+					"Low"
+				]
+			},
+			{
+				"name": "PriorityTernary",
+				"values": [
+					"High",
+					"Medium",
+					"Low"
+				]
+			}
+		],
+		"pojos": {
+			"embeddeds": [
+				{
+					"name": "Device",
+					"super_": null,
+					"attributes": [
+						{
+							"name": "code",
+							"dataType": "String"
+						},
+						{
+							"name": "lastSession",
+							"dataType": "Date"
+						},
+						{
+							"name": "userAgent",
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		"entities" : [
+			{
+				"name" : "Project",
+				"attributes" : [
+					{
+						"name" : "name",
+						"dataType" : "String"
+					},{
+						"name" : "description",
+						"dataType" : "String"
+					},{
+						"name" : "type",
+						"dataType" : "ProjectType_F"
+					},{
+						"name" : "scope",
+						"dataType" : "ProjectScope_FC"
+					},{
+						"name" : "device",
+						"dataType" : "Device_S"
+					},{
+						"name" : "devices",
+						"dataType" : "Device_SC"
+					}
+				]
+			}
+		]
+	}
+}
